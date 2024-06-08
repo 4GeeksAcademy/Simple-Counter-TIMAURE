@@ -1,7 +1,7 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
-import propsTypes from 'prop-types';
+import PropsTypes from 'prop-types';
 
 // include your styles into the webpack bundle
 import "../styles/index.css";
@@ -11,21 +11,23 @@ function ContadorSimple(props){
     return (
         <div className="Externo">
              <div className="Reloj">
-                <i class="far fa-clock">
+                <i className="far fa-clock">
              </i></div>
-             <div className="Cuarto">{props.digitoCuatro % 10}</div>
-             <div className="Tercer">{props.digitoTres % 10}</div>
-             <div className="Segundo">{props.digitoDos % 10}</div>
-            <div className="Primero">{props.digitoUno % 10}</div>
+             <div className="Cuarto">{props.digitoCuatro %10}</div>
+             <div className="Tercer">{props.digitoTres %10}</div>
+             <div className="Segundo">{props.digitoDos %10}</div>
+             <div className="Primero">{props.digitoUno %10}</div>
         </div>
     );
 };
+
 ContadorSimple.propsTypes ={
-    digitoCuatro : propsTypes.number,
-    digitoTres : propsTypes.number,
-    digitoDos : propsTypes.number,
-    digitoUno: propsTypes.number,
+    digitoCuatro : PropsTypes.number,
+    digitoTres : PropsTypes.number,
+    digitoDos : PropsTypes.number,
+    digitoUno: PropsTypes.number
 };
+
 let counter = 0;
 setInterval(function(){
     const Cuarto = Math.floor(counter/1000);
